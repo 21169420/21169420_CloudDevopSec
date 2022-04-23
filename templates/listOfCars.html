@@ -1,0 +1,36 @@
+{%extends 'layout.html'%} {%block content%}
+<div class="car-list-page">
+    {% if length_of_list > 1 %}
+    <h1>{{data.size}}</h1>
+    {% if car_select_message %}
+    <p style="color: tomato;">{{car_select_message}}</p>
+    {% endif %}
+    <h1>Select - Cars</h1>
+    <form action="/compare/cars" method="post">
+        <div class="cards-box-home">
+            {% for car in data %}
+            <div class="card-home">
+                <div class="check-box">
+                    <input type="checkbox" name="car-list" value="{{car.id}}">
+                </div>
+                <div class="card-content-box">
+                    <div class="car-name-box">
+                        <h3>{{car['name']}}</h3>
+                        <h4>{{car['manufacturer']}}</h4>
+                    </div>
+                    <div class="car-box-year">
+                        <h4>Year</h4>
+                        <h4>-{{car['year']}}-</h4>
+                    </div>
+                </div>
+            </div>
+            </a>
+            {% endfor %}
+        </div>
+        <div class="blurr-back-ground">
+            <input type="submit" value="Compare" class="compare-add-cars-button">
+        </div>
+    </form>
+    {% else %}{{error_message}}{% endif %}
+</div>
+{%endblock%}

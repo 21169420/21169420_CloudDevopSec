@@ -1,0 +1,56 @@
+{%extends 'layout.html'%} {%block content%}
+<div class="main-index-page">
+    {% if data %}
+    <div class="forms">
+        <form action="/search_by_name" method="post">
+            <input type="text" name="car_name" placeholder="Enter car name...">
+            <input type="submit" value="Search">
+        </form>
+        <form action="/search_by_power" method="post">
+            <input type="number" name="car_power" min="110" max="595" placeholder="Enter Car Power...">
+            <input type="submit" value="Search">
+        </form>
+        <form action="/search_by_WLTP_range" method="post">
+            <input type="number" name="car_WLTP_range" min="49.9" max="487" step="0.01" placeholder="Enter WLTP range...">
+            <input type="submit" value="Search">
+        </form>
+        <form action="/search_by_battery_size" method="post">
+            <input type="number" name="car_battery_size" step="0.01" min="17.6" max="118.0" placeholder="Enter Battery Size...">
+            <input type="submit" value="Search">
+        </form>
+        <form action="/search_by_manufacturer" method="post">
+            <input type="text" name="car_manufacturer" placeholder="Enter Manufacturer...">
+            <input type="submit" value="Search">
+        </form>
+        <form action="/search_by_year" method="post">
+            <input type="number" name="car_year" min="1995" max="2022" placeholder="Enter Year...">
+            <input type="submit" value="Search">
+        </form>
+    </div>
+    <div class="home-page">
+        <h1>Electric - Cars</h1>
+        <div class="cards-box-home">
+            {% for car in data %}
+            <a href="/car/{{car.id}}" class="car-link">
+                <div class="card-home">
+                    <div class="card-content-box">
+                        <div class="car-name-box">
+                            <h3>{{car['name']}}</h3>
+                            <h4>{{car['manufacturer']}}</h4>
+                        </div>
+                        <div class="car-box-year">
+                            <h4>Year</h4>
+                            <h4>-{{car['year']}}-</h4>
+                        </div>
+                        <div class="car-name-box">
+                            <h3>Power</h3>
+                            <h4>{{car['power']}}</h4>
+                        </div>
+                    </div>
+                </div>
+            </a>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+{% elif error_message %} {{error_message}} {% endif %} {%endblock%}

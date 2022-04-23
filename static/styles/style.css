@@ -1,0 +1,704 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "helvetica", sans-serif;
+    height: 100vh;
+    width: 100%;
+}
+
+h1 {
+    color: #333;
+}
+
+.nav-bar {
+    box-shadow: 0 0 30px -25px rgb(36, 0, 52);
+    height: 10vh;
+    width: 100%;
+    border-bottom-left-radius: 10%;
+    border-bottom-right-radius: 10%;
+    display: flex;
+    background: radial-gradient(rgb(255, 255, 255), rgb(251, 245, 254));
+    justify-content: center;
+    align-items: center;
+    border-bottom: 0.2px solid rgb(223, 223, 223);
+}
+
+.links {
+    list-style: none;
+    height: 100%;
+    width: 80%;
+    padding: 0 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo-box {
+    height: 100%;
+    width: max-content;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.logo-box li a {
+    color: rgb(104, 3, 124);
+}
+
+.links-box,
+.profile-box {
+    width: max-content;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.links-box li a,
+.profile-box li a {
+    margin-left: 1.5rem;
+    color: rgb(104, 3, 124)
+}
+
+li a {
+    text-decoration: none;
+    color: #333;
+}
+
+
+/* Index Page */
+
+.forms form input:first-child {
+    padding: 0.5rem 0.3rem 0.3rem 0.2rem;
+    margin-bottom: 0.2rem;
+    border: 1px solid rgba(128, 128, 128, 0.359);
+    border-radius: 4px;
+}
+
+.forms form input:nth-child(2) {
+    outline: none;
+    border: 1px solid #2785e3;
+    background-color: #2785e3;
+    color: #fff;
+    padding: 0.2rem 0.4rem;
+    border-radius: 4px;
+}
+
+
+/* Sign Up */
+
+.container {
+    height: 90vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.form {
+    width: 80%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.form-container {
+    width: 50%;
+    padding: 2rem 2.5rem;
+    border-radius: 12px;
+    background: rgba(240, 240, 240, 0.041);
+    box-shadow: 0 0 10px -7px #333;
+    border: 0.5px solid rgb(231, 231, 231);
+}
+
+.form-container h1 {
+    margin-bottom: 3rem;
+}
+
+.full-name,
+.email,
+.password {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.form-container div input {
+    margin-top: 0.4rem;
+    border: 0px;
+    outline: none;
+    padding: 12px 10px 8px 5px;
+    font-size: 1rem;
+}
+
+.form-container div label {
+    margin-top: 1rem;
+    font-size: 1.15rem;
+    color: #333;
+    cursor: pointer;
+}
+
+.full-name input,
+.email input,
+.password input {
+    width: 100%;
+}
+
+#name,
+#email,
+#password,
+#email-sign-in,
+#password-sign-in {
+    border-bottom: 2px solid rgb(134, 134, 134);
+}
+
+.submit {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.submit .submit-btn {
+    padding: 0.8rem 1.5rem;
+    font-size: 1.15rem;
+    background: rgb(70, 100, 235);
+    border: none;
+    border-radius: 10px;
+    color: aliceblue;
+    margin-top: 2rem;
+    cursor: pointer;
+    transition: 0.2s background;
+}
+
+.submit .submit-btn:hover {
+    background: rgb(50, 82, 223);
+}
+
+
+/* Profile */
+
+.user-profile {
+    width: 100%;
+    height: 100%;
+    margin: 0 7rem;
+    padding: 2rem 0;
+}
+
+.user-box {
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    display: flex;
+    height: 4rem;
+}
+
+.user-profile .logout-btn {
+    color: whitesmoke;
+    background-color: rgb(26, 92, 235);
+    font-size: 1.01rem;
+    padding: 0.5rem 2rem;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-bottom: 2rem;
+}
+
+.user-profile .divider-line {
+    margin: 1rem 0;
+    border: 0.5px solid rgba(216, 216, 216, 0.322);
+}
+
+.user-box .add-car-button {
+    background-color: rgb(11, 182, 68);
+    text-decoration: none;
+    outline: none;
+    padding: 0.5rem 2rem;
+    font-size: 1.01rem;
+    color: white;
+    border-radius: 5px;
+}
+
+
+/* EV Car Form */
+
+.ev-car-form-container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.ev-car-form-box {
+    width: 100%;
+    height: fit-content;
+    flex-direction: column;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.car-form {
+    width: max-content;
+    height: fit-content;
+    margin: 4rem 0;
+    display: flex;
+    justify-content: center;
+    padding: 2.5rem;
+    flex-direction: column;
+    margin-bottom: 4rem;
+    border-radius: 12px;
+    border: 0.5px solid rgb(231, 231, 231);
+    box-shadow: 0 0 10px -6.5px rgb(0, 0, 0);
+}
+
+.car-form div {
+    margin-top: 1.5rem;
+    width: 25rem;
+    height: fit-content;
+    padding: 0.5rem 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+#car-name,
+#car-manufacturer,
+#car-year,
+#car-battery,
+#car-WLTP-range,
+#car-cost,
+#car-power,
+#car-image {
+    width: 100%;
+    margin-top: 0.5rem;
+    border: none;
+    border-bottom: 2px solid gray;
+    font-size: 1.02rem;
+    outline: none;
+    padding: 0.4rem 0.3rem 0.2rem 0.3rem;
+}
+
+.car-submit-box .btn {
+    font-size: 1.01rem;
+    background-color: rgb(3, 192, 120);
+    color: #eee;
+    outline: none;
+    border: none;
+    padding: 0.3rem 0.7rem;
+    border-radius: 6px;
+}
+
+
+/*Car Card Styles */
+
+.cards-box {
+    width: 100%;
+    height: min-content;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    grid-auto-rows: 150px;
+    grid-gap: 2rem;
+}
+
+.card,
+.card-home {
+    width: 100%;
+    position: relative;
+    height: max-content;
+    padding: 1.5rem;
+    box-shadow: 0 0 10px -7px rgb(0, 0, 0);
+    border-radius: 12px;
+    border: 1px solid rgba(0, 0, 0, 0.151);
+    transition: 0.25s ease-in-out;
+    cursor: pointer;
+}
+
+.card:hover,
+.card-home:hover {
+    box-shadow: -1px 15px 25px -5px rgba(0, 0, 0, 0.151);
+    transform: translateY(-2px);
+}
+
+.card .card-content-box {
+    width: 100%;
+    display: flex;
+    height: 20%;
+    justify-content: space-between;
+    padding: 0 1rem;
+    align-items: center;
+}
+
+.card-content-box .car-name-box h4 {
+    font-size: 0.9rem;
+    color: gray;
+}
+
+.card-content-box .car-box-year h4:nth-child(2) {
+    font-size: 0.9rem;
+    color: gray;
+    font-weight: 300;
+}
+
+.card .card-buttons {
+    width: 100%;
+    height: 20%;
+    display: flex;
+    justify-content: flex-end;
+    padding: 0 1rem;
+    align-items: center;
+}
+
+.delete-btn,
+.edit-btn {
+    padding: 0.2rem 0.4rem;
+    border-radius: 5px;
+    margin-top: 1rem;
+    border: none;
+}
+
+.delete-btn {
+    background-color: rgb(236, 56, 56);
+    color: #eee;
+    outline: none;
+    cursor: pointer;
+    margin-right: 1rem;
+}
+
+.edit-btn {
+    background-color: rgb(243, 243, 243);
+    color: #333;
+    border: 0.5px solid rgba(0, 0, 0, 0.178);
+    text-decoration: none;
+}
+
+.cards-box-home {
+    width: 100%;
+    /* height: 90vh; */
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    grid-auto-rows: 200px;
+    grid-gap: 2rem;
+}
+
+.card-home .check-box {
+    position: absolute;
+    top: 1%;
+    right: 1%;
+    padding: 0.1rem 0.2rem;
+    border: 1px solid white;
+    background-color: rgba(255, 255, 255, 0.074);
+    border-radius: 5px;
+}
+
+.check-box input {
+    accent-color: #2785e3;
+    height: 25px;
+    /* not needed */
+    width: 25px;
+    /* not needed */
+}
+
+.card-content-box {
+    width: 100%;
+    height: 30%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 1rem;
+}
+
+.home-page {
+    width: 100%;
+    padding: 2rem 2rem;
+}
+
+.home-page h1 {
+    margin-bottom: 2rem;
+}
+
+.car-link {
+    text-decoration: none;
+    color: #333;
+}
+
+.main-index-page,
+.car-list-page {
+    width: 100%;
+    height: 90vh;
+}
+
+.car-list-page {
+    padding: 2rem;
+}
+
+.car-list-page h1 {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.compare-cars-list {
+    margin-top: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.forms {
+    width: 100%;
+    /* height: 90vh; */
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+    grid-auto-rows: max-content;
+    grid-gap: 2rem;
+    padding: 2rem;
+}
+
+.forms form input:first-child {
+    width: 100%;
+}
+
+.blurr-back-ground {
+    position: fixed;
+    bottom: 10%;
+    right: 50%;
+    border-radius: 12px;
+    transform: translate(50%, 50%);
+    border: 2px solid rgba(51, 51, 51, 0.089);
+    padding: 2rem 4rem;
+    z-index: 4;
+    backdrop-filter: blur(5px);
+}
+
+.compare-add-cars-button {
+    background-color: rgb(35, 177, 35);
+    font-size: 1.01rem;
+    padding: 0.4rem 0.8rem;
+    color: #eee;
+    border-radius: 10px;
+    border: none;
+    outline: none;
+}
+
+.compare-page-div {
+    width: 100%;
+    height: 90vh;
+    padding: 2rem;
+    text-align: center;
+}
+
+.compare-page-div a {
+    text-decoration: none;
+    padding: 0.3rem 0.8rem;
+    border-radius: 12px;
+    background-color: rgb(44, 96, 240);
+    color: #fff;
+}
+
+.compare-page-div h1 {
+    margin: 2rem 0;
+}
+
+.compare-card,
+.title-box {
+    display: grid;
+    width: 100%;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    grid-auto-rows: max-content;
+    grid-gap: 1rem;
+    padding: 1rem;
+}
+
+.compare-card h4 {
+    padding: 2rem;
+    text-align: center;
+    border-radius: 5px;
+    box-shadow: 0 0 10px -8px rgb(0, 0, 0);
+    border: 1px solid rgba(51, 51, 51, 0.089);
+    color: rgb(100, 100, 100);
+    background-color: #fff;
+}
+
+.slim-text {
+    font-weight: 300;
+    margin-left: 1rem;
+}
+
+.green-back-class {
+    background-color: #38b000 !important;
+    color: #fff !important;
+}
+
+.red-back-class {
+    background-color: #ee6055 !important;
+    color: #fff !important;
+}
+
+.title-box h4 {
+    padding: 2rem;
+    border-radius: 5px;
+    text-align: center;
+    box-shadow: 0 0 10px -8px rgb(0, 0, 0);
+    border: 1px solid rgba(51, 51, 51, 0.089);
+    background-color: #fff;
+}
+
+.title-box .compare-car-title {
+    margin-left: 1rem;
+}
+
+
+/* Car Info Page */
+
+.car-info-page {
+    width: 100%;
+    height: 90vh;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+.car-info {
+    width: 50%;
+    padding: 1.5rem;
+    margin: 1rem 0;
+    height: max-content;
+}
+
+.car-info h1,
+.car-reviews h1 {
+    padding-bottom: 1rem;
+    border-bottom: 1px solid rgb(215, 215, 215);
+}
+
+.car-info h3 {
+    margin-bottom: 0.8rem;
+    margin-top: 4rem;
+    color: #333;
+}
+
+.car-info h3 span {
+    color: gray;
+    font-weight: 400;
+}
+
+.main-sep-box {
+    width: 70%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.main-sep-box div p {
+    margin-bottom: 0.2rem;
+    font-weight: 600;
+    color: #333;
+}
+
+.main-sep-box div p span {
+    font-weight: 400;
+}
+
+.car-info-buttons {
+    display: flex;
+    width: 70%;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.car-reviews {
+    width: 50%;
+    padding: 1.5rem;
+    border-left: 2px solid rgba(209, 209, 209, 0.24);
+    height: 80vh;
+    scroll-behavior: smooth;
+    overflow-y: scroll;
+    margin: 1rem 0;
+}
+
+.car-reviews h1 {
+    margin-bottom: 4rem;
+}
+
+.review-form {
+    width: 100%;
+}
+
+.review-form form {
+    display: flex;
+    width: 50%;
+    flex-direction: column;
+    margin-bottom: 1rem;
+}
+
+.rating-div {
+    width: 100%;
+}
+
+.rating-div input {
+    margin-left: 1rem;
+    outline: none;
+    font-size: 1.15rem;
+    border: none;
+    border: 1px solid rgba(51, 51, 51, 0.166);
+    text-align: center;
+    font-weight: 600;
+    padding: 0.2rem;
+    border-radius: 4px;
+}
+
+.review-form form textarea {
+    padding: 0.5rem;
+    border-radius: 4px;
+    border: 2px solid rgba(51, 51, 51, 0.27);
+    margin: 1rem 0;
+}
+
+.review-btn-submit {
+    width: fit-content;
+    padding: 0.2rem 0.8rem;
+    font-size: 0.9rem;
+}
+
+.car-reviews h2 {
+    margin-bottom: 1rem;
+}
+
+.reviews-cards-container {
+    display: grid;
+    width: 100%;
+    grid-template-columns: repeat(auto-fill, minmax(100%, 1fr));
+    grid-auto-rows: max-content;
+    grid-gap: 1rem;
+    padding: 1rem;
+}
+
+.review-card {
+    padding: 1rem;
+    border-radius: 10px;
+}
+
+.review-card:nth-child(2n-1) {
+    background-color: #eaeaea;
+}
+
+.review-card:nth-child(2n) {
+    border: 1px solid rgba(128, 128, 128, 0.244);
+}
+
+.review-card .reviews p:nth-child(2) {
+    margin: 0.7rem 0;
+}
+
+.review-card .reviews p:nth-child(3) {
+    font-style: italic;
+}

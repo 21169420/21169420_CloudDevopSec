@@ -1,0 +1,40 @@
+{%extends 'layout.html'%} {%block content%} {% if user_info %}
+<div class="user-profile">
+    <h1>Your Profile</h1>
+    <div class="user-box">
+        <h3>Email : {{user_info['email']}}</h3>
+        <!-- <h3>Name : {{ user_info['name'] }}</h3> -->
+        <a href="/createEvCar" class="add-car-button">Add Car</a>
+    </div>
+    <button onclick="signout()" class="logout-btn">logout</button> {% elif error_message %}
+    <p>{{error_message}}</p> {% endif %} {% if cars %}
+    <h2>Your Collection</h2>
+    <div class="divider-line"></div>
+    <div class="cards-box">
+        {% for carItem in cars %}
+        <div class="card">
+            <div class="card-content-box">
+                <div class="car-name-box">
+                    <h3>{{carItem.name}}</h3>
+                    <h4>{{carItem.manufacturer}}</h4>
+                </div>
+                <div class="car-box-year">
+                    <h4>Year</h4>
+                    <h4>-{{carItem.year}}-</h4>
+                </div>
+                <div class="car-name-box">
+                    <h3>power</h3>
+                    <h4>{{carItem.power}}</h4>
+                </div>
+            </div>
+            <div class="card-buttons">
+                <form action="/delete_car/{{carItem.id}}" method="post" class="delete-form">
+                    <input type="submit" value="Delete" class="delete-btn">
+                </form>
+                <a href="/editCar/{{carItem.id}}" class="edit-btn">Edit</a>
+            </div>
+        </div>
+        {% endfor %}
+    </div>{% endif %}
+</div>
+{%endblock%}

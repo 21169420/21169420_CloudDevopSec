@@ -1,0 +1,53 @@
+{%extends 'layout.html'%} {%block content%}
+<div class="compare-page-div">
+    <a href="/compare/cars">Add Cars</a>
+    <h1>Comparison</h1>
+    {% if car_list %}
+    <div class="compare-cars-list">
+        <div class="title-box">
+            <h4>Name</h4>
+            <h4 class="compare-car-title">WLTP Range</h4>
+            <h4 class="compare-car-title">Battery Size</h4>
+            <h4 class="compare-car-title">Cost</h4>
+            <h4 class="compare-car-title">Power</h4>
+            <h4 class="compare-car-title">Average Reviews</h4>
+        </div>
+        {% for car in car_list %}
+        <div class="compare-card">
+            <h4><a href="/car/{{car.id}}">{{car.name}}</a></h4>
+            {% if max_wltp_range == car.WLTP_range|float %}
+            <h4 class="slim-text green-back-class">{{car.WLTP_range}}</h4>
+            {% elif min_wltp_range == car.WLTP_range|float %}
+            <h4 class="slim-text red-back-class ">{{car.WLTP_range}}</h4>
+            {% else %}
+            <h4 class="slim-text ">{{car.WLTP_range}}</h4>
+            {% endif %} {% if max_battery_size == car.battery_size|float %}
+            <h4 class="slim-text green-back-class">{{car.battery_size}}</h4>
+            {% elif min_battery_size == car.battery_size|float %}
+            <h4 class="slim-text red-back-class ">{{car.battery_size}}</h4>
+            {% else %}
+            <h4 class="slim-text ">{{car.battery_size}}</h4>
+            {% endif %} {% if min_cost == car.cost|float %}
+            <h4 class="slim-text green-back-class">{{car.cost}}</h4>
+            {% elif max_cost == car.cost|float %}
+            <h4 class="slim-text red-back-class ">{{car.cost}}</h4>
+            {% else %}
+            <h4 class="slim-text ">{{car.cost}}</h4>
+            {% endif %} {% if max_power == car.power|float %}
+            <h4 class="slim-text green-back-class">{{car.power}}</h4>
+            {% elif min_power == car.power|float %}
+            <h4 class="slim-text red-back-class ">{{car.power}}</h4>
+            {% else %}
+            <h4 class="slim-text ">{{car.power}}</h4>
+            {% endif %} {% if max_average_rating == car.average_reviews|float %}
+            <h4 class="slim-text green-back-class">{{car.average_reviews}}</h4>
+            {% elif min_average_rating == car.average_reviews|float %}
+            <h4 class="slim-text red-back-class ">{{car.average_reviews}}</h4>
+            {% else %}
+            <h4 class="slim-text ">{{car.average_reviews}}</h4>
+            {% endif %}
+
+        </div>
+        {% endfor %} </div> {% endif %}
+</div>
+{%endblock%}

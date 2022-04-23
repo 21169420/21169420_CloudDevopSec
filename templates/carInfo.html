@@ -1,0 +1,53 @@
+{%extends 'layout.html'%} {%block content%}
+<div class="car-info-page">
+    <div class="car-info">
+        <h1>{{car.name}}</h1>
+        <h3>manufacturer : <span>{{car.manufacturer}}</span> </h3>
+        <div class="main-sep-box">
+            <div class="info-sep-box-1">
+                <p> power : <span>{{car.power}} Kw</span> </p>
+                <p> year : <span>{{car.year}}</span> </p>
+            </div>
+            <div class="info-sep-box-2">
+                <p>WLTP Range : <span>{{car.WLTP_range}} km</span></p>
+                <p>Battery Size : <span>{{car.battery_size}} Kwh</span></p>
+            </div>
+        </div>
+        {% if user_info %} {% for id in car_id_list %} {% if id == car.id %}
+        <div class="car-info-buttons">
+            <form action="/delete_car/{{car.id}}" method="post" class="delete-form">
+                <input type="submit" value="Delete" class="delete-btn">
+            </form>
+            <a href="/editCar/{{car.id}}" class="edit-btn">Edit</a>
+        </div>
+        {% endif %} {% endfor %} {% endif %}
+    </div>
+    <div class="car-reviews">
+        <h1>Reviews</h1>
+        {% if user_info %}
+        <div class="review-form">
+            <form action="/car/{{car.id}}" method="post">
+                <div class="rating-div">
+                    <label for="rating">Rate 1 to 10</label>
+                    <input type="number" name="rating" id="rating" max="10" min="1" step="1" required>
+                </div>
+                <textarea name="text" id="text" cols="40" rows="5" placeholder="write your thoughts here ..." required></textarea>
+                <input type="submit" value="submit" class="review-btn-submit">
+            </form>
+        </div>
+        {% endif %}
+        <h2>Average Rating : {{car.average_reviews}}</h2>
+        <div class="reviews-cards-container">
+            {% for review in reverse_review_list %} {% if review %}
+            <div class="review-card">
+                <div class="reviews">
+                    <h4>{{review.name}}</h4>
+                    <p>Rated : {{review.rating}} out of 10</p>
+                    <p>{{review.text}}</p>
+                </div>
+            </div>
+            {% endif %} {% endfor %}
+        </div>
+    </div>
+</div>
+{%endblock%}

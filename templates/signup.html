@@ -1,0 +1,22 @@
+{%extends 'layout.html'%} {%block content%}
+<div class="form">
+    <div class="form-container">
+        <h1>Sign - Up</h1>
+        <div class="email">
+            <label for="email" class="email-text">Email</label>
+            <input type="email" name="email" id="email-sign-in" placeholder="Enter your E-mail">
+        </div>
+        <div class="full-name">
+            <label for="name" class="full-name-text">Full Name</label>
+            <input type="text" name="name" id="name" placeholder="Enter your Full-Name">
+        </div>
+        <div class="password">
+            <label for="password" class="password-text">Password</label>
+            <input type="password" name="password" id="password-sign-in" placeholder="Enter your Password">
+        </div>
+        <div class="submit">
+            <button class="submit-btn" onclick="register()">Submit</button>
+        </div>
+    </div>
+</div>
+{%endblock%}

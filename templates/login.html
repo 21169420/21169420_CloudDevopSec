@@ -1,0 +1,18 @@
+{%extends 'layout.html'%} {%block content%}
+<div class="form">
+    <div class="form-container">
+        <h1>Login</h1>
+        <div class="email">
+            <label for="email" class="email-text">Email</label>
+            <input type="email" name="email" id="email" placeholder="Enter your E-mail">
+        </div>
+        <div class="password">
+            <label for="email" class="password-text">Password</label>
+            <input type="password" name="password" id="password" placeholder="Enter your Password">
+        </div>
+        <div class="submit">
+            <button class="submit-btn" onclick="login()">Submit</button>
+        </div>
+    </div>
+</div>
+{%endblock%}

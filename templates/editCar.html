@@ -1,0 +1,42 @@
+{%extends 'layout.html'%} {%block content%}
+<div class="ev-car-form-container">
+    <div class="ev-car-form-box">
+        <form action="/editCar/{{car.id}}" method="post" class="car-form">
+            <h1>Edit Car Details</h1>
+            <!-- # name, manufacturer, year, battery size (Kwh), WLTP range
+        # (Km), cost, power (Kw) -->
+            <div class="car-name-box">
+                <label for="car-name" class="car-name">Car Name</label>
+                <input type="text" name="car-name" id="car-name" placeholder="Enter your car name..." value="{{car.name}}" required>
+            </div>
+            <div class="car-manufacturer-box">
+                <label for="car-manufacturer" class="car-manufacturer">Manufacturer</label>
+                <input type="text" name="car-manufacturer" id="car-manufacturer" value="{{car.manufacturer}}" placeholder=" Enter name of manufacturer..." required>
+            </div>
+            <div class="car-year-box">
+                <label for="car-year" class="car-year">Model Year</label>
+                <input type="number" name="car-year" id="car-year" min="1995" max="2022" value="{{car.year}}" placeholder=" Enter model year..." required>
+            </div>
+            <div class="car-battery-box">
+                <label for="car-battery" class="car-battery">Battery Size (Kwh)</label>
+                <input type="number" step="0.01" min="17.6" max="118.0" name="car-battery" value="{{car.battery_size}}" placeholder=" Enter battery size..." id="car-battery" required>
+            </div>
+            <div class="car-WLTP-range-box">
+                <label for="car-WLTP-range" class="car-WLTP-range">WLTP Range (km)</label>
+                <input type="number" step="0.01" min="49.9" max="487.0" name="car-WLTP-range" value="{{car.WLTP_range}}" placeholder="Enter Wltp range..." id="car-WLTP-range" required>
+            </div>
+            <div class="car-cost-box">
+                <label for="car-cost" class="car-cost">Cost</label>
+                <input type="number" step="0.01" min="24946.33" max="2900000.00" name="car-cost" value="{{car.cost}}" placeholder="Enter car cost..." id="car-cost" required>
+            </div>
+            <div class="car-power-box">
+                <label for="car-power" class="car-power">Power (Kw) </label>
+                <input type="number" step="1" min="110" max="595" name="car-power" value="{{car.power}}" placeholder="Enter car power..." id="car-power" required>
+            </div>
+            <div class="">
+                <input type="submit" name="submit" class="btn">
+            </div>
+        </form>
+    </div>
+</div>
+{%endblock%}
