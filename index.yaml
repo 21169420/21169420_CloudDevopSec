@@ -1,0 +1,9 @@
+indexes:
+  - kind: Cars
+    properties:
+      - name: name
+      - name: power
+      - name: WLTP_range
+      - name: battery_size
+      - name: manufacturer
+      - name: year
